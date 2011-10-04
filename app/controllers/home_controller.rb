@@ -13,5 +13,8 @@ class HomeController < ApplicationController
   
   def documentacao
   end
+  
+  def cronograma
+  end
 
 end

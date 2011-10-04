@@ -1,8 +1,84 @@
 <div class="post">
 	<h2 class="title">
-		Documentação
+		Instalação
 	</h2>
 	<div class="entry">
-		Em breve
+	    <p>
+	    	<%= link_to 'Faça o Download da versão estável', download_path %> e prossiga com a instalação do Ruby on Rails e MySQL.
+	    </p>
+	</div>
+	<div class="entry">
+		<p>
+			<%= image_tag 'ruby_on_rails_logo.jpg', :width => '100' %>
+			<br/>
+			<span class="destaque3">Ruby on Rails</span>: instalação de Ruby (em breve), instalação de Ruby on Rails(em breve), configuração de Gateway SMS(em breve)
+		</p>
+	</div>
+	<div class="entry">
+		<p>
+			<%= image_tag 'logo-mysql-300x218.jpg', :width => '100' %>
+			<br/>
+			<span class="destaque3">Banco de dados MySQL</span>: instalação de MySQL(em breve)
+		</p>
+	</div>
+</div>
+
+<div class="post">
+	<h2 class="title">
+		Visão geral
+	</h2>
+	<div class="entry">
+		<p>A solução é segmentada por <span class="destaque">cidades brasileiras</span>, ou seja, cada usuário possui uma cidade e cada cidade possui um conjunto de habitantes cadastrados. Por definição, cada cidade só pode controlar o seu próprio conjunto de habitantes e suas áreas de risco.</p>
+	</div>
+</div>
+
+<div class="post">
+	<h2 class="title">
+		Glossário
+	</h2>
+	<div class="entry">
+		<ul>
+			<li><span class="destaque">Cidade</span>: representa cada cidade brasileira sendo assim um agrupamento lógico das atividades. Por exemplo, a cidade de Niterói/RJ que possui habitantes, áreas de risco, gestores, etc</li>
+			<li><span class="destaque">Área de risco</span>: representa uma área de risco de uma cidade. Possui informações geográficas (geolocation) e informações para notificação e classificação de risco</li>
+			<li><span class="destaque">Habitante</span>: representa os habitantes de uma cidade, estando ou não localizados em uma área de risco</li>
+			<li><span class="destaque">Notificação</span>: representa alguma forma de notificação do SMSalva-vidas aos habitantes(interessados) de uma determinada área. Pode ser difundida através de diversos canais: mensagem SMS, e-mail, mensagem Mobile, twitter, facebook, etc</li>
+			<li><span class="destaque">Equipe de apoio</span>: representa uma equipe de apoio de uma cidade a uma determinada área de risco. Pode ser composta por diversos profissionais de apoio.</li>
+			<li><span class="destaque">Profissional de apoio</span>: representa um profissional que integra uma equipe de apoio de uma cidade a uma ou mais áreas de risco. Possui o celular cadastrado e não possui acesso ao sistema.</li>
+		</ul>
+	</div>
+</div>
+
+<div class="post">
+	<h2 class="title">
+		Papéis
+	</h2>
+	<div class="entry">
+		<ul>
+			<li><span class="destaque">Administrador</span>: pode executar qualquer atividade em qualquer cidade desejada</li>
+			<li><span class="destaque">Gestor de cidade</span>: pode executar qualquer atividade somente na sua cidade</li>
+			<li><span class="destaque">Cadastrador de cidade</span>: pode cadastrar novos habitantes na sua cidade</li>
+			<li><span class="destaque">Notificador de cidade</span>: pode notificar os habitantes de uma determinada cidade</li>
+			<li><span class="destaque">Anônimo</span>: visualiza as áreas filtrando por cidade e quantos habitantes estão em cada uma delas, além de poder visualizar as notificações por cidade</li>
+		</ul>
+	</div>
+</div>
+
+<div class="post">
+	<h2 class="title">
+		Funcionalidades
+	</h2>
+	<div class="entry">
+		<ul>
+			<li><span class="destaque3">Gerenciamento de cidades</span>: visualização, edição e ativação/desativação de cidades do Brasil. Caso exista a necessidade de divulgação no Twitter, deve ser informado o login e senha, assim como para o Facebook. Cada cidade deve estar ligada a um estado brasileiro.</li>
+			<li><span class="destaque3">Gerenciamento de usuários</span>: listagem com filtro por cidade, cadastro, edição e ativação/desativação dos usuários. No cadastro deve-se selecionar a cidade e informar se ele é gestor, cadastrador ou notificador daquela cidade. Atributos: nome, login, senha, e-mail e celular.</li>
+			<li><span class="destaque3">Gerenciamento de habitantes</span>: listagem com filtro por cidade, cadastro, edição e remoção e desativação de habitantes. No cadastro deve-se selecionar a cidade e informar a localização GPS da sua habitação usando um mapa. Esse cadastro poderá ser realizado através de uma plataforma <span class="destaque2">mobile (Android)</span>.</li>
+			<li><span class="destaque3">Gerenciamento de profissionais de apoio</span>: listagem com filtro por cidade e por equipe, cadastro, edição e remoção e desativação de profissionais de apoio (geralmente operadores da defesa civil). Atributos: nome, celular1, celular2, cidade.</li>
+			<li><span class="destaque3">Gerenciamento de equipes de apoio</span>: alocação de profissionais de apoio em equipes com o objetivo de dar atenção a uma determinada área em caso de risco de catástrofes. Atributos: nome, profissionais que a compõem, cidade de atuação.</li>
+			<li><span class="destaque3">Gerenciamento de áreas de risco</span>: listagem com filtro por cidade, cadastro, edição e remoção e desativação de áreas de risco. Atributos: nome da área, nível de risco (<a href="http://www.cfh.ufsc.br/~gedn/sibraden/cd/EIXO%203_OK/3-37.pdf">referência</a>), cidade, equipes de apoio, mensagens SMS </li>
+			<li><span class="destaque3">Gerenciamento de notificações</span>: visualização, detalhamento (confirmação de entrega, no caso de SMSs) e envio de notificações a uma determinada área de risco (localizada em uma cidade). Atributos: texto para habitantes (SMS), texto para equipes (SMS), twittar?, publicar no facebook?</li>
+			<li><span class="destaque3">Visualização pública de áreas de risco</span>: visualização pública (no mapa) de áreas de risco filtradas por cidade.</li>
+			<li><span class="destaque3">Verificação de notificações para área</span>: capacidade de consultar uma área específica para saber se existe alguma notificação para aquela área.</li>
+			<li><span class="destaque3">Visualização de posicionamento GPS em áreas de risco</span>: consultar se uma coordenada GPS está dentro de uma área de risco de alguma cidade. Essa consulta deverá ser realizada em um <span class="destaque2">celular Android</span></li>
+		</ul>
 	</div>
 </div>

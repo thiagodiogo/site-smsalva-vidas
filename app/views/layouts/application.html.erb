@@ -11,13 +11,11 @@
 	<%= yield :head %>
 </head>
 <body>
-	<!-- start header -->
 	<div id="header">
 		<h1><a href="<%= root_path %>" ><div id="sms">SMS</div><span>alva-vidas</span></a></h1>
 		<h2>Salvando vidas usando SMS</h2>
 	</div>
 	<div id="page">
-		<!-- start sidebar -->
 		<div id="sidebar">
 			<ul>
 				<li>
@@ -31,9 +29,10 @@
 				<li>
 					<h2>a solução</h2>
 					<ul>
-						<li><%= link_to 'Screenshots', "#" %></a></li>
-						<li><%= link_to 'Documentação', documentacao_path %></li>
+						<li><%= link_to 'Documentação', documentacao_path %></li>						
+						<!--<li><%= link_to 'Screenshots', "#" %></a></li>-->
 						<li><%= link_to 'Download', download_path %></li>
+						<li><%= link_to 'Cronograma', cronograma_path %></li>
 					</ul>
 				</li>
 				<li>
@@ -45,8 +44,6 @@
 			</ul>
 			<div style="clear: both;">&nbsp;</div>
 		</div>
-		<!-- end sidebar -->
-		<!-- start content -->
 		<div id="content">
 			<div class="flash">
 				<% flash.each do |type, message| -%>
@@ -58,9 +55,7 @@
 			<div id="main">
 				<%= yield %>
 			</div>
-			<!-- end content -->
 		</div>
-		<!-- end page -->
 		<div id="footer">
 			<p id="links"><%= link_to 'Política de privacidade', "#" %> | <%= link_to 'Termos de uso', "#" %> | <a href="http://validator.w3.org/check/referer" title="This page validates as XHTML 1.0 Transitional"><abbr title="eXtensible HyperText Markup Language">XHTML</abbr></a> | <a href="http://jigsaw.w3.org/css-validator/check/referer" title="This page validates as CSS"><abbr title="Cascading Style Sheets">CSS</abbr></a></p>
 			<p id="legal">Desenvolvido por <a href="http://thiagodiogo.blogspot.com">Thiago Diogo</a> @<%= Time.now.year %></p>

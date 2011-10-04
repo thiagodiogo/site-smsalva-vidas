@@ -4,6 +4,7 @@ SiteSmsalvaVidas::Application.routes.draw do
   get "o_projeto" => "home#o_projeto"
   get "download" => "home#download"
   get "documentacao" => "home#documentacao"
+  get "cronograma" => "home#cronograma"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
